@@ -5,7 +5,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		for(int i = 0; i < tabell.length; i++) {
+		for (int i = 0; i < tabell.length; i++) {
 			System.out.print(tabell[i] + ", ");
 		}
 		System.out.println();
@@ -31,7 +31,7 @@ public class Tabeller {
 	public static int summer(int[] tabell) {
 		int sum = 0;
 
-		for(int i = 0; i < tabell.length; i++) {
+		for (int i = 0; i < tabell.length; i++) {
 			sum += tabell[i];
 		}
 		return sum;
@@ -60,7 +60,8 @@ public class Tabeller {
 				posisjon = i;
 				return posisjon;
 			}
-		} return posisjon;
+		}
+		return posisjon;
 	}
 
 	// f)
@@ -69,7 +70,7 @@ public class Tabeller {
 		int[] nyTabell = new int[tabell.length];
 
 		for (int i = 0; i < tabell.length; i++) {
-			nyTabell[i] = tabell[(tabell.length)-1 - i];
+			nyTabell[i] = tabell[(tabell.length) - 1 - i];
 		}
 		return nyTabell;
 	}
@@ -83,14 +84,22 @@ public class Tabeller {
 			if (tabell[i] <= tabell[i - 1]) {
 				sortert = false;
 			}
-		} return sortert;
+		}
+		return sortert;
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
+		int[] nyTabell = new int[tabell1.length + tabell2.length];
 
+		for (int i = 0; i < tabell1.length; i++) {
+			nyTabell[i] = tabell1[i];
+		}
+
+		for (int i = 0; i < tabell2.length; i++) {
+			nyTabell[tabell1.length + i] = tabell2[i];
+		}
+		return nyTabell;
 	}
 }
