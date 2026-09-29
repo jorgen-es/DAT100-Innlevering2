@@ -80,7 +80,7 @@ public class Tabeller {
 		boolean sortert = true;
 
 		for (int i = 1; i < tabell.length; i++) {
-			if (tabell[i] < tabell[i - 1]) {
+			if (tabell[i] <= tabell[i - 1]) {
 				sortert = false;
 			}
 		} return sortert;
