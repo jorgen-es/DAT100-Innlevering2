@@ -4,25 +4,44 @@ public class Matriser {
 
 	// a)
 	public static void skrivUt(int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
+
+		for(int[] rad : matrise) {
+			for (int tall : rad) {
+				System.out.print(tall + " ");
+			}
+			System.out.println();
+		}
 	}
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
-		
+		String resultat ="";
+
+		for (int[] rad : matrise) {
+
+			boolean første = true;
+
+			for (int tall : rad) {
+				if (!første) {
+					resultat += " ";
+				}
+				resultat += tall;
+				første = false;
+			} resultat += "\n";
+		} return resultat;
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
-		
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
-	
+
+		int[][] nyMatrise = new int[matrise.length][matrise[0].length];
+
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[0].length; j++) {
+				nyMatrise[i][j] = matrise[i][j]*tall;
+			}
+		} return nyMatrise;
 	}
 
 	// d)
